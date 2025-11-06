@@ -1,0 +1,193 @@
+:root {
+  --blue: rgb(29, 77, 114);
+  --blue-1: rgba(29, 77, 114, 0.1);
+  --blue-7: rgba(43, 145, 222, 0.632);
+  --brown: rgb(26, 65, 35);
+  --yellow: rgb(184, 38, 128);
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.125rem; /* ~18px */
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+nav a {
+  font-size: 1.1rem;
+}
+
+html {
+  font-size: 18px;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Montserrat Alternates', sans-serif;
+  line-height: 1.5;
+  color: #391c1cca;
+}
+
+header {
+  background-color: var(--blue);
+  color: #fff;
+  padding: 1rem;
+}
+
+header h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+
+nav {
+  background-color: #391c1cca;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav a {
+  flex: 1 1 auto;
+  display: block;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.5rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: var(--brown);
+  font-weight: 600;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+footer {
+  font-size: 0.9rem;
+  padding: 1rem;
+  background-color: var(--blue);
+  color: #fff;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  margin: .5rem;
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+.profile {
+  width: 130px;
+  height: auto;
+  margin-right: 1.5rem;
+}
+
+.card {
+  border-radius: .65rem;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  margin-bottom: 1rem;
+  justify-content: center;
+  text-align: center;
+}
+
+.card p {
+  padding: 1rem;
+}
+
+.me img {
+  float: inline-end;
+}
+
+.country {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  align-items: center;
+}
+
+.country h3 {
+  grid-column: 1/3;
+  text-align: center;
+  border-bottom: 1px solid #bbb;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.country-text {
+  display: block;
+  padding: 0 1rem;
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80%;
+}
+
+.highlight {
+  color: rgba(255, 255, 255, 0.744);
+  font-size: smaller;
+  font-style: oblique;
+}
+
+figure {
+  margin: .5rem;
+}
+
+figcaption {
+  font-size: smaller;
+  text-align: center;
+  font-style: italic;
+}
+
+@media screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  header h1,
+  h2 {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+
+  main {
+    padding: 0.5rem;
+  }
+
+  .imageList {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    padding: 0.75rem;
+  }
+}
