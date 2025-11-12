@@ -1,90 +1,97 @@
-<!-- This is a test for a webpage all about me! -->
-
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Hunter Mitchell | WDD231 Course Home</title>
+  <meta name="description" content="WDD231 course home demonstrating responsive layout, accessibility, and dynamic course filtering.">
+  <meta name="author" content="Hunter Mitchell">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>WDD 131: Dynamic Web Fundamentals | Hunter Mitchell</title>
-      <meta name="description" content="This is an example assignment portal, home page for WDD 231">
-      <meta name="author" content="Hunter Mitchell">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat+Alternates&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="styles/base.css">
-      <script src="scripts/getdates.js" defer></script>
-  </head>
+  <link rel="icon" href="images/byui-logo.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/large.css">
 
-  <body>
-    <header>
-      <h1>WDD 131: Dynamic Web Fundamentals - <span class="highlight">Hunter Mitchell</span></h1>
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/dates.js" defer></script>
+  <script src="scripts/courses.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="images/byui-logo.svg" alt="BYU-Idaho logo" width="40" height="40">
+      <span class="site-owner">Hunter Mitchell</span>
+    </div>
 
-      <nav>
-        <a href="https://www.linkedin.com/in/hunter-mitchell-79b2bb151">LinkedIn</a>
-        <a href="https://byupw.instructure.com/" target="_blank">Canvas</a>
-        <a href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/84?lang=eng&id=p118#p118" target="_blank">Scripture</a>
-        <a href="project.html">Final Project</a>
-      </nav>
-    </header>
+    <h1 class="page-title">WDD231 – Course Home Page</h1>
 
-    <main>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+      <span class="bar" aria-hidden="true"></span>
+      <span class="bar" aria-hidden="true"></span>
+      <span class="bar" aria-hidden="true"></span>
+    </button>
 
-      <section class="card">
-        <h2>About Me</h2>
-        <div class="me">
-          <img class="profile" src="images/profile.webp" alt="Student Profile Image"
-            width="200" height="136">
-          <p>My name is Hunter Mitchell. I currently live in Nashville, TN. 4 years ago, I married the love of my life, Madeline. We do not yet have any kids, but we are hoping to change that soon.
-              I am hoping to find an intership by the end of this semester, so we can start preparing for a better future.
-          </p>
-        </div>
-        <div class="country">
-          <h3>Gallatin, Tennessee, USA</h3>
+    <nav id="primary-nav" class="nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="chamber/">Chamber</a></li>
+        <li><a href="final/">Final</a></li>
+      </ul>
+    </nav>
+  </header>
 
-          <figure>
-            <img src="images/usa_flag.webp" alt="USA Flag" width="200">
-            <figcaption>United States of America</figcaption>
-          </figure>
+  <main>
+    <section class="filters">
+      <div class="filter-buttons">
+        <button type="button" class="filter-btn" data-filter="all">All Courses</button>
+        <button type="button" class="filter-btn" data-filter="WDD">WDD Courses</button>
+        <button type="button" class="filter-btn" data-filter="CSE">CSE Courses</button>
+      </div>
+      <p class="credits-summary">
+        <strong>Credits shown:</strong> <span id="creditTotal">0</span>
+      </p>
+    </section>
 
-          <figure>
-            <img src="images/tennessee_flag.webp" alt="TN State Flag" width="200">
-            <figcaption>Tennessee State Flag</figcaption>
-          </figure>
-        </div>
-        <div class="country country-text">
-            <p>The United States of America (USA) is a diverse nation with a rich cultural heritage and significant global influence. Known for iconic landmarks and bustling cities,
-              it operates as a federal republic. Tennessee, the Volunteer State, is famous for its vibrant music scene in Nashville and Memphis and the stunning Great Smoky Mountains National Park.
-              
-              A blend of Southern hospitality and rich history, Tennessee offers unique cultural experiences within the dynamic fabric of the USA.
-            </p>
-        </div>
+    <section class="certificate">
+      <h2>Web and Computer Programming Certificate</h2>
+      <div id="coursesGrid" class="courses-grid" role="list">
+        <!-- JS will inject course cards -->
+      </div>
+    </section>
+
+    <div class="info-row">
+      <section class="about">
+        <h2>About This Page</h2>
+        <p>This page demonstrates responsive navigation, working with CSS and HTML, and using JavaScript to control the menu, date, and time.</p>
       </section>
 
-      <section class="card">
-        <h2>Web Dev Resources</h2>
-        <div class="middle">
-          <ul>
-            <li><a href="https://dev.to" target="_blank">Dev.to Community</a></li>
-            <li><a href="https://smashingmagazine.com">Smashing Magazine</a></li>
-            <li><a href="https://css-tricks.com" target="_blank">CSS Tricks</a></li>
-            <li><a href="https://www.w3schools.com" target="_blank">W3 Schools</a></li>
-            <li><a href="https://www.udemy.com" target="_blank">Udemy</a></li>
-            <li><a href="https://picsum.photos/">Lorem Picsum Image Placeholder</a></li>
-          </ul>
-        </div>
+      <section class="resources">
+        <h2>Resources</h2>
+        <ul>
+          <li><a href="https://www.w3schools.com/">W3 Schools</a></li>
+          <li><a href="https://developer.mozilla.org/">Mozilla Developer Network</a></li>
+          <li><a href="https://dev.to/">dev.to</a></li>
+        </ul>
       </section>
+    </div>
+  </main>
 
-
-
-    </main>
-
-    <footer>
-      <p><span id="currentYear"></span> 🌻 Hunter Mitchell 🌻| Tennessee, USA </p>
-      <p class="highlight" id="lastModified">Last Modification: 01/01/1970 12:00:00</p>
-    </footer>
-
-
-  </body>
-
+  <footer class="site-footer">
+    <div class="social">
+      <a href="https://github.com/yourgithubusername" aria-label="GitHub">
+        <img src="images/social-github.svg" alt="">
+      </a>
+      <a href="https://www.linkedin.com/in/your-linkedin-username" aria-label="LinkedIn">
+        <img src="images/social-linkedin.svg" alt="">
+      </a>
+      <a href="#" aria-label="Extra social">
+        <img src="images/social-extras.svg" alt="">
+      </a>
+    </div>
+    <p class="legal">
+      <span id="currentyear"></span> © Hunter Mitchell • Tennessee, USA
+    </p>
+    <p id="lastModified" class="modified"></p>
+  </footer>
+</body>
 </html>
