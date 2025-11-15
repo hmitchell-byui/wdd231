@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Station Square Coffee",
+    "address": "146 N Water Ave, Gallatin, TN 37066",
+    "phone": "+1-615-555-1010",
+    "website": "https://stationsquare.example.com",
+    "image": "station-square.png",
+    "membership": 3,
+    "category": "Food & Beverage"
+  },
+  {
+    "name": "Cumberland Fitness",
+    "address": "320 Maple St, Gallatin, TN 37066",
+    "phone": "+1-615-555-2020",
+    "website": "https://cumberlandfit.example.com",
+    "image": "cumberland-fitness.png",
+    "membership": 2,
+    "category": "Health & Wellness"
+  },
+  {
+    "name": "Old Hickory Outfitters",
+    "address": "22 Broadway, Gallatin, TN 37066",
+    "phone": "+1-615-555-3030",
+    "website": "https://oldhickory.example.com",
+    "image": "old-hickory.png",
+    "membership": 1,
+    "category": "Retail"
+  },
+  {
+    "name": "Sumner Tech Services",
+    "address": "801 Hartsville Pike, Gallatin, TN 37066",
+    "phone": "+1-615-555-4040",
+    "website": "https://sumnertech.example.com",
+    "image": "sumner-tech.png",
+    "membership": 3,
+    "category": "IT & Services"
+  },
+  {
+    "name": "Public Square Books",
+    "address": "106 Public Square, Gallatin, TN 37066",
+    "phone": "+1-615-555-5050",
+    "website": "https://psbooks.example.com",
+    "image": "public-square-books.png",
+    "membership": 2,
+    "category": "Retail"
+  },
+  {
+    "name": "Gallatin Garden Coop",
+    "address": "415 Nashville Pike, Gallatin, TN 37066",
+    "phone": "+1-615-555-6060",
+    "website": "https://gallatingarden.example.com",
+    "image": "garden-coop.png",
+    "membership": 1,
+    "category": "Agriculture"
+  },
+  {
+    "name": "Station 1 Creative",
+    "address": "12 College St, Gallatin, TN 37066",
+    "phone": "+1-615-555-7070",
+    "website": "https://station1creative.example.com",
+    "image": "station1-creative.png",
+    "membership": 2,
+    "category": "Marketing & Design"
+  }
+]

@@ -1,0 +1,21 @@
+/* large.css */
+/* Media queries for larger screens */
+
+/* Show nav on wide screens */
+@media (min-width: 760px) {
+  .nav-toggle { display: none; }
+  .primary-nav { display: block; margin-left: auto; }
+}
+
+/* Directory grid expansion */
+@media (min-width: 560px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 920px) {
+  .cards { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
