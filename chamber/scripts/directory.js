@@ -1,11 +1,45 @@
 // directory.js
+document.addEventListener('DOMContentLoaded', () => {
+  const yearEl = document.getElementById('year');
+  const modEl = document.getElementById('lastModified');
+
+  // Year
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+
+  // Last modified (robust formatting + fallback)
+  if (modEl) {
+    const raw = document.lastModified; // string like "11/16/2025, 12:34:56 PM"
+    let dt;
+    try {
+      dt = new Date(raw);
+    } catch {
+      dt = null;
+    }
+
+    const formatted = dt && !isNaN(dt.getTime())
+      ? dt.toLocaleString(undefined, {
+          year: 'numeric',
+          month: 'short',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit'
+        })
+      : new Date().toLocaleString();
+
+    modEl.textContent = formatted;
+  }
+});
+
+// Combined script for directory page
 
 document.addEventListener('DOMContentLoaded', () => {
   // Footer dates
-  const yearEl = document.getElementById('year');
-  const modEl = document.getElementById('lastModified');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-  if (modEl) modEl.textContent = document.lastModified;
+//   const yearEl = document.getElementById('year');
+//   const modEl = document.getElementById('lastModified');
+//   if (yearEl) yearEl.textContent = new Date().getFullYear();
+//   if (modEl) modEl.textContent = document.lastModified;
 
   // Nav toggle
   const navToggle = document.querySelector('.nav-toggle');
