@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallatin Chamber of Commerce</title>
+  <meta name="description" content="Gallatin Chamber of Commerce homepage: events, weather, and member directory." />
+  <meta name="author" content="Hunter Mitchell" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Rubik:wght@500;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/large.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="https://www.gallatintn.gov/ImageRepository/Document?documentID=874" alt="" class="brand-mark" aria-hidden="true" />
+        <span class="brand-name">Gallatin Chamber</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="visually-hidden">Toggle navigation</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" />
+        </svg>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="discover.html">Discover</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <img src="https://felix-homes-assets.s3.us-east-2.amazonaws.com/small_Gallatin_0713158582.jpeg" alt="Gallatin city square" class="hero-img" />
+      <div class="hero-text">
+        <h1>Welcome to the Gallatin Chamber</h1>
+        <p>Connecting businesses, community, and opportunity.</p>
+      </div>
+    </section>
+
+    <section class="home-modules">
+      <div class="module">
+        <h2 class="module-title">🌟 Upcoming Events</h2>
+        <ul>
+          <li><strong>Nov 20:</strong> Small Business Mixer</li>
+          <li><strong>Dec 5:</strong> Holiday Parade</li>
+          <li><strong>Dec 12:</strong> Chamber Luncheon</li>
+        </ul>
+        <a href="events.html" class="module-link">View all events →</a>
+      </div>
+
+      <div class="module">
+        <h2 class="module-title weather-title">
+          <span class="weather-icon" aria-hidden="true">🌤️</span>
+          <span class="weather-label">Local Weather</span>
+        </h2>
+        <p><strong>Gallatin, TN:</strong> 58°F, Partly Cloudy</p>
+        <p>Tomorrow: High 62°F / Low 45°F</p>
+        <a href="https://weather.com/weather/today/l/Gallatin+TN" target="_blank" class="module-link">Full forecast →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-contact">
+          <h2 class="footer-title">Gallatin Chamber of Commerce</h2>
+          <address>
+            118 W Main St, Gallatin, TN 37066<br />
+            <a href="tel:+16154524000">(615) 452-4000</a><br />
+            <a href="mailto:info@gallatintn.org">info@gallatintn.org</a><br />
+            <a href="https://www.gallatintn.org" target="_blank">www.gallatintn.org</a>
+          </address>
+        </div>
+        <div class="footer-social">
+          <a href="#"><img src="images/facebook.svg" alt="Facebook" /></a>
+          <a href="#"><img src="images/instagram.svg" alt="Instagram" /></a>
+          <a href="#"><img src="images/linkedin.svg" alt="LinkedIn" /></a>
+        </div>
+        <div class="footer-meta">
+          <p>WDD 231 • Hunter Mitchell</p>
+          <p>&copy; <span id="year"></span> Gallatin Chamber</p>
+          <p>Last modified: <span id="lastModified"></span></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js" defer></script>
+</body>
+</html>
