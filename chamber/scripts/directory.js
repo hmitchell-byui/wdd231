@@ -1,6 +1,4 @@
 // directory.js
-import members from './members.js';
-
 document.addEventListener('DOMContentLoaded', () => {
   // Footer dates
   const yearEl = document.getElementById('year');
@@ -24,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const listBtn = document.getElementById('listBtn');
   const membersContainer = document.getElementById('members');
   let currentView = 'grid';
+  let members = [];
 
   function levelLabel(level) {
     switch (Number(level)) {
@@ -73,6 +72,18 @@ document.addEventListener('DOMContentLoaded', () => {
     renderList(members);
   });
 
-  // Initial render
-  renderGrid(members);
+  async function loadMembers() {
+    try {
+      const res = await fetch('scripts/members.json');
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      members = data.members || [];
+      currentView === 'grid' ? renderGrid(members) : renderList(members);
+    } catch (err) {
+      console.error('Error loading members:', err);
+      membersContainer.innerHTML = `<p class="error">Unable to load directory data.</p>`;
+    }
+  }
+
+  loadMembers();
 });
