@@ -7,6 +7,16 @@
   <meta name="description" content="Gallatin Chamber of Commerce homepage: events, weather, and member directory." />
   <meta name="author" content="Hunter Mitchell" />
 
+  <!-- Favicon -->
+  <link rel="icon" href="https://www.gallatintn.gov/ImageRepository/Document?documentID=874" type="image/png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gallatin Chamber of Commerce | Connecting Businesses and Community" />
+  <meta property="og:description" content="Explore events, weather, and member directory for Gallatin Chamber of Commerce." />
+  <meta property="og:image" content="https://felix-homes-assets.s3.us-east-2.amazonaws.com/small_Gallatin_0713158582.jpeg" />
+  <meta property="og:url" content="https://hmitchell-byui.github.io/wdd231/chamber/index.html" />
+  <meta property="og:type" content="website" />
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,15 +51,19 @@
   </header>
 
   <main class="main">
+    <!-- Hero with CTA -->
     <section class="hero">
       <img src="https://felix-homes-assets.s3.us-east-2.amazonaws.com/small_Gallatin_0713158582.jpeg" alt="Gallatin city square" class="hero-img" />
       <div class="hero-text">
         <h1>Welcome to the Gallatin Chamber</h1>
         <p>Connecting businesses, community, and opportunity.</p>
+        <a href="join.html" class="cta-btn">Join the Chamber →</a>
       </div>
     </section>
 
+    <!-- Home modules -->
     <section class="home-modules">
+      <!-- Events -->
       <div class="module">
         <h2 class="module-title">🌟 Upcoming Events</h2>
         <ul>
@@ -60,14 +74,23 @@
         <a href="events.html" class="module-link">View all events →</a>
       </div>
 
+      <!-- Weather -->
       <div class="module">
         <h2 class="module-title weather-title">
           <span class="weather-icon" aria-hidden="true">🌤️</span>
           <span class="weather-label">Local Weather</span>
         </h2>
-        <p><strong>Gallatin, TN:</strong> 58°F, Partly Cloudy</p>
-        <p>Tomorrow: High 62°F / Low 45°F</p>
-        <a href="https://weather.com/weather/today/l/Gallatin+TN" target="_blank" class="module-link">Full forecast →</a>
+        <div id="weather">
+          <p>Loading weather...</p>
+        </div>
+      </div>
+
+      <!-- Company Spotlight -->
+      <div class="module">
+        <h2 class="module-title">✨ Member Spotlight</h2>
+        <div id="spotlight" class="spotlight-grid">
+          <!-- Random gold/silver members injected here -->
+        </div>
       </div>
     </section>
   </main>
@@ -98,6 +121,6 @@
     </div>
   </footer>
 
-  <script src="scripts/main.js" defer></script>
+  <script src="scripts/home.js" defer></script>
 </body>
 </html>
