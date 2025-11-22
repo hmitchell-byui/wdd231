@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Join — Gallatin Chamber</title>
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/large.css" media="(min-width:900px)">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="/chamber/">
+        <img src="https://www.gallatintn.gov/ImageRepository/Document?documentID=874"
+             alt="Gallatin logo" class="brand-mark" />
+      </a>
+      <nav class="main-nav" role="navigation" aria-label="Main">
+        <button id="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+        <ul id="nav-list" class="nav-list hidden">
+          <li><a href="/chamber/">Home</a></li>
+          <li><a href="/chamber/directory.html">Directory</a></li>
+          <li><a href="/chamber/join.html">Join</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card-section" aria-labelledby="join-heading">
+      <h1 id="join-heading">Join the Chamber</h1>
+
+      <form id="join-form" class="join-form" action="thankyou.html" method="get" novalidate>
+        <input type="hidden" name="timestamp" id="timestamp" value="">
+        <label for="name">Full Name</label>
+        <input id="name" name="name" type="text" required autocomplete="name" title="Full name must be at least 7 characters" pattern="[A-Za-z\s\-]{7,}" />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="name@example.com" required autocomplete="email" />
+
+        <label for="company">Business / Organization</label>
+        <input id="company" name="company" type="text" required autocomplete="organization" />
+
+        <label for="membership">Membership Level</label>
+        <select id="membership" name="membership" required>
+          <option value="">Select level</option>
+          <option value="bronze">Bronze</option>
+          <option value="silver">Silver</option>
+          <option value="gold">Gold</option>
+          <option value="platinum">Platinum</option>
+        </select>
+
+        <button id="join-submit" class="btn primary" type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <nav class="footer-nav" aria-label="Footer">
+        <ul>
+          <li><a href="/chamber/">Home</a></li>
+          <li><a href="/chamber/directory.html">Directory</a></li>
+          <li><a href="/chamber/join.html">Join</a></li>
+        </ul>
+      </nav>
+      <p>© <span id="year"></span> Gallatin Chamber</p>
+    </div>
+  </footer>
+
+  <script src="scripts/header-footer.js" defer></script>
+  <script src="scripts/main.js" defer></script>
+</body>
+</html>

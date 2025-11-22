@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gallatin Chamber of Commerce</title>
-  <meta name="description" content="Gallatin Chamber of Commerce homepage: events, weather, and member directory." />
+  <title>Gallatin Chamber Directory</title>
+  <meta name="description" content="Gallatin Chamber of Commerce member directory: browse local businesses and organizations." />
   <meta name="author" content="Hunter Mitchell" />
 
   <!-- Fonts -->
@@ -31,8 +31,8 @@
       </button>
       <nav id="primary-nav" class="primary-nav" aria-label="Primary">
         <ul>
-          <li><a href="index.html" aria-current="page">Home</a></li>
-          <li><a href="directory.html">Directory</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html" aria-current="page">Directory</a></li>
           <li><a href="join.html">Join</a></li>
           <li><a href="discover.html">Discover</a></li>
         </ul>
@@ -44,31 +44,21 @@
     <section class="hero">
       <img src="https://felix-homes-assets.s3.us-east-2.amazonaws.com/small_Gallatin_0713158582.jpeg" alt="Gallatin city square" class="hero-img" />
       <div class="hero-text">
-        <h1>Welcome to the Gallatin Chamber</h1>
-        <p>Connecting businesses, community, and opportunity.</p>
+        <h1>Member Directory</h1>
+        <p>Browse businesses and organizations in the Gallatin Chamber.</p>
       </div>
     </section>
 
-    <section class="home-modules">
-      <div class="module">
-        <h2 class="module-title">🌟 Upcoming Events</h2>
-        <ul>
-          <li><strong>Nov 20:</strong> Small Business Mixer</li>
-          <li><strong>Dec 5:</strong> Holiday Parade</li>
-          <li><strong>Dec 12:</strong> Chamber Luncheon</li>
-        </ul>
-        <a href="events.html" class="module-link">View all events →</a>
+    <section class="directory-controls">
+      <h2 class="visually-hidden">View Options</h2>
+      <div class="view-toggle">
+        <button id="gridBtn" aria-pressed="true">Grid View</button>
+        <button id="listBtn" aria-pressed="false">List View</button>
       </div>
+    </section>
 
-      <div class="module">
-        <h2 class="module-title weather-title">
-          <span class="weather-icon" aria-hidden="true">🌤️</span>
-          <span class="weather-label">Local Weather</span>
-        </h2>
-        <p><strong>Gallatin, TN:</strong> 58°F, Partly Cloudy</p>
-        <p>Tomorrow: High 62°F / Low 45°F</p>
-        <a href="https://weather.com/weather/today/l/Gallatin+TN" target="_blank" class="module-link">Full forecast →</a>
-      </div>
+    <section id="members" class="cards">
+      <!-- Members injected here -->
     </section>
   </main>
 
@@ -98,6 +88,7 @@
     </div>
   </footer>
 
-  <script src="scripts/main.js" defer></script>
+  <!-- Load directory logic as ES module -->
+  <script type="module" src="scripts/directory.js"></script>
 </body>
 </html>

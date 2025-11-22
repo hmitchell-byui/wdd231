@@ -1,45 +1,12 @@
 // directory.js
-document.addEventListener('DOMContentLoaded', () => {
-  const yearEl = document.getElementById('year');
-  const modEl = document.getElementById('lastModified');
-
-  // Year
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
-  }
-
-  // Last modified (robust formatting + fallback)
-  if (modEl) {
-    const raw = document.lastModified; // string like "11/16/2025, 12:34:56 PM"
-    let dt;
-    try {
-      dt = new Date(raw);
-    } catch {
-      dt = null;
-    }
-
-    const formatted = dt && !isNaN(dt.getTime())
-      ? dt.toLocaleString(undefined, {
-          year: 'numeric',
-          month: 'short',
-          day: '2-digit',
-          hour: '2-digit',
-          minute: '2-digit'
-        })
-      : new Date().toLocaleString();
-
-    modEl.textContent = formatted;
-  }
-});
-
-// Combined script for directory page
+import members from './members.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Footer dates
-//   const yearEl = document.getElementById('year');
-//   const modEl = document.getElementById('lastModified');
-//   if (yearEl) yearEl.textContent = new Date().getFullYear();
-//   if (modEl) modEl.textContent = document.lastModified;
+  const yearEl = document.getElementById('year');
+  const modEl = document.getElementById('lastModified');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+  if (modEl) modEl.textContent = document.lastModified;
 
   // Nav toggle
   const navToggle = document.querySelector('.nav-toggle');
@@ -52,22 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // View toggle
+  // Directory rendering
   const gridBtn = document.getElementById('gridBtn');
   const listBtn = document.getElementById('listBtn');
   const membersContainer = document.getElementById('members');
-  const loadingEl = document.getElementById('loading');
-  const errorEl = document.getElementById('error');
-
-  let members = [];
   let currentView = 'grid';
-
-  function togglePressed(active, inactive) {
-    active.classList.add('is-active');
-    inactive.classList.remove('is-active');
-    active.setAttribute('aria-pressed', 'true');
-    inactive.setAttribute('aria-pressed', 'false');
-  }
 
   function levelLabel(level) {
     switch (Number(level)) {
@@ -81,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     membersContainer.className = 'cards';
     membersContainer.innerHTML = items.map(m => `
       <article class="card">
-        <img class="logo" src="images/members/${m.image}" alt="${m.name} logo">
+        <img class="logo" src="${m.image}" alt="${m.name} logo">
         <div>
           <h3>${m.name}</h3>
           <p class="meta">${m.address}</p>
@@ -98,44 +54,25 @@ document.addEventListener('DOMContentLoaded', () => {
     membersContainer.innerHTML = items.map(m => `
       <div class="list-item">
         <span class="name">${m.name}</span>
-        <span class="contact">${m.phone} • <a href="${m.website}" target="_blank" rel="noopener">Website</a></span>
+        <span class="contact">${m.phone} • ${levelLabel(m.membership)} • 
+          <a href="${m.website}" target="_blank" rel="noopener">Website</a>
+        </span>
       </div>
     `).join('');
   }
 
-  function initViewControls() {
-    gridBtn.addEventListener('click', () => {
-      if (currentView === 'grid') return;
-      currentView = 'grid';
-      togglePressed(gridBtn, listBtn);
-      renderGrid(members);
-    });
+  gridBtn.addEventListener('click', () => {
+    if (currentView === 'grid') return;
+    currentView = 'grid';
+    renderGrid(members);
+  });
 
-    listBtn.addEventListener('click', () => {
-      if (currentView === 'list') return;
-      currentView = 'list';
-      togglePressed(listBtn, gridBtn);
-      renderList(members);
-    });
-  }
+  listBtn.addEventListener('click', () => {
+    if (currentView === 'list') return;
+    currentView = 'list';
+    renderList(members);
+  });
 
-  async function loadMembers() {
-    try {
-      loadingEl.hidden = false;
-      errorEl.hidden = true;
-      const res = await fetch('scripts/members.json');
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
-      members = Array.isArray(data) ? data : (data.members || []);
-      currentView === 'grid' ? renderGrid(members) : renderList(members);
-    } catch (err) {
-      console.error(err);
-      errorEl.hidden = false;
-    } finally {
-      loadingEl.hidden = true;
-    }
-  }
-
-  initViewControls();
-  loadMembers();
+  // Initial render
+  renderGrid(members);
 });
