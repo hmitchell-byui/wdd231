@@ -1,61 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="author" content="Hunter Mitchell">
-  <meta name="description" content="Mitchell-ville Farms Site Plan">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="author" content="Hunter Mitchell" />
+  <meta name="description" content="Mitchell-ville Farms Site Plan" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mitchell-ville Farms Site Plan</title>
-  <!-- Google Fonts -->
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --sun-yellow: #f9e79f; /* pastel yellow */
-      --sun-brown: #d7bfa7;  /* pastel brown */
-      --sun-green: #a9dfbf;  /* pastel green */
+      --muted-yellow: #f5f2d0; /* background */
+      --sun-yellow: #eadf78;   /* accent yellow */
+      --sun-green:  #2f6d3a;   /* leafy green */
+      --sun-brown:  #6e4b2e;   /* farm brown */
+      --ink:        #222;      /* text color */
     }
+
     body {
       font-family: 'Montserrat Alternates', sans-serif;
       margin: 2rem;
-      line-height: 1.6;
-      background-color: #fffef8;
+      line-height: 1.7;
+      background: var(--muted-yellow);
+      color: var(--ink);
     }
+
     h1, h2 {
       font-family: 'Great Vibes', cursive;
       color: var(--sun-green);
+      margin-bottom: 0.75rem;
     }
+
+    h3 {
+      font-weight: 700;
+      color: var(--ink);
+      margin-top: 1rem;
+    }
+
     section {
       border: 2px solid var(--sun-brown);
       padding: 1rem;
-      margin-bottom: 1.5rem;
-      background-color: var(--sun-yellow);
+      margin-bottom: 1.25rem;
+      background: #f2eebd; /* softer yellow card for readability */
+      border-radius: 8px;
     }
-    .highlight {
-      color: var(--sun-green);
-      font-weight: bold;
+
+    .accent {
+      height: 6px;
+      background: var(--sun-yellow);
+      border-radius: 6px;
+      margin: 0.5rem 0 1rem;
     }
+
+    .chips { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .chip {
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(0,0,0,0.1);
+      font-size: 0.9rem;
+      color: var(--ink);
+    }
+    .chip.yellow { background: var(--sun-yellow); }
+    .chip.green  { background: var(--sun-green); color: #fff; }
+    .chip.brown  { background: var(--sun-brown); color: #fff; }
+    .chip.muted  { background: var(--muted-yellow); }
+
+    ul { margin-left: 1.25rem; }
     pre {
-      background: #f0f0f0;
+      background: #f4f4f4;
       padding: 1rem;
       overflow-x: auto;
+      border-left: 4px solid var(--sun-green);
+    }
+
+    a {
+      color: var(--sun-green);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      color: var(--ink);
+      border-top: 4px solid var(--sun-brown);
+      padding-top: 1rem;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Mitchell-ville Farms Site Plan</h1>
+    <div class="accent" aria-hidden="true"></div>
   </header>
 
   <main>
     <section>
-      <h2>1. Site Name</h2>
-      <p><span class="highlight">Mitchell-ville Farms</span> — chosen to reflect a family-style farm brand, emphasizing chickens, cows, and barn life.</p>
+      <h2>1. Site name</h2>
+      <p><strong>Mitchell-ville Farms</strong> — a family-style farm brand centered on chickens, cows, and barn life.</p>
     </section>
 
     <section>
-      <h2>2. Site Purpose</h2>
+      <h2>2. Site purpose</h2>
       <ul>
         <li>Provide information about farm animals and barn operations.</li>
         <li>Share educational resources for families and students about sustainable farming.</li>
@@ -73,10 +125,19 @@
     </section>
 
     <section>
-      <h2>4. Color Schema</h2>
-      <p>Pastel Yellow (<span style="color:var(--sun-yellow)">yellow</span>): headings, CTA buttons, highlights.</p>
-      <p>Pastel Brown (<span style="color:var(--sun-brown)">brown</span>): footer, borders, accents.</p>
-      <p>Pastel Green (<span style="color:var(--sun-green)">green</span>): navigation, section dividers, hover states.</p>
+      <h2>4. Color schema</h2>
+      <div class="chips" role="list" aria-label="Color swatches">
+        <span class="chip yellow" role="listitem">Sunflower yellow — #eadf78</span>
+        <span class="chip green"  role="listitem">Leafy green — #2f6d3a</span>
+        <span class="chip brown"  role="listitem">Farm brown — #6e4b2e</span>
+        <span class="chip muted"  role="listitem">Muted yellow background — #f5f2d0</span>
+      </div>
+      <ul>
+        <li><strong>Muted yellow:</strong> Page background for warmth and readability.</li>
+        <li><strong>Sunflower yellow:</strong> Accent bars, highlights.</li>
+        <li><strong>Leafy green:</strong> Headings, links, interactive accents.</li>
+        <li><strong>Farm brown:</strong> Borders, footer, structural anchors.</li>
+      </ul>
     </section>
 
     <section>
@@ -87,7 +148,7 @@
 
     <section>
       <h2>6. Wireframes</h2>
-      <h3>Mobile View</h3>
+      <h3>Mobile view</h3>
       <pre>
 +-------------------+
 | Logo + Hamburger  |
@@ -101,7 +162,7 @@
 +-------------------+
       </pre>
 
-      <h3>Wide View (Desktop)</h3>
+      <h3>Wide view (desktop)</h3>
       <pre>
 +--------------------------------------------------+
 | Logo + Horizontal Nav                            |
@@ -114,16 +175,21 @@
 +--------------------------------------------------+
       </pre>
     </section>
+
+    <section>
+      <h2>7. Valid HTML and CSS</h2>
+      <p>This document uses semantic HTML5 with consistent CSS, a proper title, and accessible color application.</p>
+    </section>
   </main>
 
   <footer>
-    <p>&copy;2025 🌻 Hunter Mitchell 🌻 | Tennessee, USA</p>
-    <p id="lastModified">Last Modification: <!-- JS will insert timestamp --></p>
+    <p>&copy;2025 Hunter Mitchell | Tennessee, USA</p>
+    <p id="lastModified">Last Modification: </p>
   </footer>
 
   <script>
-    document.getElementById('lastModified').textContent = "Last Modification: " + document.lastModified;
+    document.getElementById('lastModified').textContent =
+      "Last Modification: " + document.lastModified;
   </script>
 </body>
 </html>
- 
