@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Thank You — Gallatin Chamber</title>
+
+  <!-- Meta -->
+  <meta name="author" content="Hunter Mitchell">
+  <meta name="description" content="Confirmation of your Gallatin Chamber membership application.">
+  <meta property="og:title" content="Thank You — Gallatin Chamber">
+  <meta property="og:description" content="Your membership application has been received.">
+  <meta property="og:image" content="https://felix-homes-assets.s3.us-east-2.amazonaws.com/small_Gallatin_0713158582.jpeg">
+  <meta property="og:url" content="thank_you.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://www.gallatintn.gov/ImageRepository/Document?documentID=874" type="image/png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/large.css" media="(min-width:900px)">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="https://www.gallatintn.gov/ImageRepository/Document?documentID=874"
+             alt="Gallatin logo" class="brand-mark" />
+        <span class="brand-name">Gallatin Chamber</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+      <nav class="primary-nav" role="navigation" aria-label="Main">
+        <ul id="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="main">
+    <section class="card-section">
+      <h1>Thank You for Joining!</h1>
+      <p>We’ve received your application. Here are the details you submitted:</p>
+
+      <div class="card">
+        <p><strong>First Name:</strong> <span id="out-first-name"></span></p>
+        <p><strong>Last Name:</strong> <span id="out-last-name"></span></p>
+        <p><strong>Organizational Title:</strong> <span id="out-title"></span></p>
+        <p><strong>Email:</strong> <span id="out-email"></span></p>
+        <p><strong>Mobile Phone:</strong> <span id="out-phone"></span></p>
+        <p><strong>Organization:</strong> <span id="out-company"></span></p>
+        <p><strong>Membership Level:</strong> <span id="out-membership"></span></p>
+        <p><strong>Submitted At:</strong> <span id="out-timestamp"></span></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <nav class="footer-nav" aria-label="Footer">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </nav>
+      <p><span id="currentYear"></span> 🌻 Hunter Mitchell 🌻 | Tennessee, USA</p>
+      <p id="lastModified"></p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // Parse query string
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById("out-first-name").textContent = params.get("first-name");
+    document.getElementById("out-last-name").textContent = params.get("last-name");
+    document.getElementById("out-title").textContent = params.get("title");
+    document.getElementById("out-email").textContent = params.get("email");
+    document.getElementById("out-phone").textContent = params.get("phone");
+    document.getElementById("out-company").textContent = params.get("company");
+    document.getElementById("out-membership").textContent = params.get("membership");
+    document.getElementById("out-timestamp").textContent = params.get("timestamp");
+
+    // Footer logic
+    let d = new Date();
+    document.getElementById('currentYear').innerHTML = `©${d.getFullYear()}`;
+    document.querySelector('#lastModified').textContent = `Last Modification: ${document.lastModified}`;
+  </script>
+</body>
+</html>

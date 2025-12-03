@@ -4,70 +4,138 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Join — Gallatin Chamber</title>
+
+  <!-- Meta -->
+  <meta name="author" content="Hunter Mitchell">
+  <meta name="description" content="Join the Gallatin Chamber of Commerce and discover membership benefits for your business.">
+  <meta property="og:title" content="Join — Gallatin Chamber">
+  <meta property="og:description" content="Become a member of the Gallatin Chamber of Commerce.">
+  <meta property="og:image" content="https://felix-homes-assets.s3.us-east-2.amazonaws.com/small_Gallatin_0713158582.jpeg">
+  <meta property="og:url" content="https://yourdomain.com/chamber/join.html">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://www.gallatintn.gov/ImageRepository/Document?documentID=874" type="image/png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/large.css" media="(min-width:900px)">
 </head>
 <body>
   <header class="site-header" role="banner">
-    <div class="container header-inner">
-      <a class="logo" href="/chamber/">
+    <div class="header-inner">
+      <a class="brand" href="">
         <img src="https://www.gallatintn.gov/ImageRepository/Document?documentID=874"
              alt="Gallatin logo" class="brand-mark" />
+        <span class="brand-name">Gallatin Chamber</span>
       </a>
-      <nav class="main-nav" role="navigation" aria-label="Main">
-        <button id="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
-        <ul id="nav-list" class="nav-list hidden">
-          <li><a href="/chamber/">Home</a></li>
-          <li><a href="/chamber/directory.html">Directory</a></li>
-          <li><a href="/chamber/join.html">Join</a></li>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
+      <nav class="primary-nav" role="navigation" aria-label="Main">
+        <ul id="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html" aria-current="page">Join</a></li>
         </ul>
       </nav>
     </div>
   </header>
+    <main class="main">
+      <section class="join-layout">
+        <form id="join-form" class="join-form" action="thank_you.html" method="get" novalidate>
+          <input type="hidden" name="timestamp" id="timestamp" value="">
 
-  <main class="container">
-    <section class="card-section" aria-labelledby="join-heading">
-      <h1 id="join-heading">Join the Chamber</h1>
+          <h1 id="join-heading">Join the Chamber</h1>
 
-      <form id="join-form" class="join-form" action="thankyou.html" method="get" novalidate>
-        <input type="hidden" name="timestamp" id="timestamp" value="">
-        <label for="name">Full Name</label>
-        <input id="name" name="name" type="text" required autocomplete="name" title="Full name must be at least 7 characters" pattern="[A-Za-z\s\-]{7,}" />
+          <label for="first-name">First Name</label>
+          <input id="first-name" name="first-name" type="text" required title="Enter your first name" autocomplete="given-name" />
 
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" placeholder="name@example.com" required autocomplete="email" />
+          <label for="last-name">Last Name</label>
+          <input id="last-name" name="last-name" type="text" required title="Enter your last name" autocomplete="family-name" />
 
-        <label for="company">Business / Organization</label>
-        <input id="company" name="company" type="text" required autocomplete="organization" />
+          <label for="title">Organizational Title</label>
+          <input id="title" name="title" type="text" title="Your role in the organization" autocomplete="organization-title"
+                pattern="[A-Za-z\\s\\-]{7,}" />
 
-        <label for="membership">Membership Level</label>
-        <select id="membership" name="membership" required>
-          <option value="">Select level</option>
-          <option value="bronze">Bronze</option>
-          <option value="silver">Silver</option>
-          <option value="gold">Gold</option>
-          <option value="platinum">Platinum</option>
-        </select>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required title="Enter a valid email address"
+                autocomplete="email" placeholder="name@example.com" />
 
-        <button id="join-submit" class="btn primary" type="submit">Submit</button>
-      </form>
-    </section>
-  </main>
+          <label for="phone">Mobile Phone</label>
+          <input id="phone" name="phone" type="tel" required title="Enter your mobile number" autocomplete="tel" />
+
+          <label for="company">Business / Organization</label>
+          <input id="company" name="company" type="text" required title="Enter your organization name" autocomplete="organization" />
+
+          <label for="membership">Membership Level</label>
+          <select id="membership" name="membership" required>
+            <option value="">Select level</option>
+            <option value="np">NP Membership</option>
+            <option value="bronze">Bronze</option>
+            <option value="silver">Silver</option>
+            <option value="gold">Gold</option>
+          </select>
+
+          <button id="join-submit" class="btn primary" type="submit">Submit</button>
+        </form>
+        <aside class="membership-benefits">
+          <h2>Membership Level Benefits</h2>
+          <div class="benefit">
+            <h3>NP Membership</h3>
+            <p>For non-profit organizations. No fee.</p>
+          </div>
+          <div class="benefit">
+            <h3>Bronze Membership</h3>
+            <ul>
+              <li>15% discount on events</li>
+              <li>10% discount on advertising</li>
+              <li>Fee of $50/month</li>
+            </ul>
+          </div>
+          <div class="benefit">
+            <h3>Silver Membership</h3>
+            <ul>
+              <li>25% discount on events</li>
+              <li>15% discount on advertising</li>
+              <li>Free participation in the trade fair</li>
+              <li>Fee of $100/month</li>
+            </ul>
+          </div>
+          <div class="benefit">
+            <h3>Gold Membership</h3>
+            <ul>
+              <li>50% discount on events</li>
+              <li>50% discount on advertising</li>
+              <li>Free participation in the trade fair</li>
+              <li>5 free featured ads per year</li>
+              <li>1 free training per quarter</li>
+              <li>Fee of $250/month</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+    </main>
+
 
   <footer class="site-footer" role="contentinfo">
-    <div class="container footer-inner">
+    <div class="footer-inner">
       <nav class="footer-nav" aria-label="Footer">
         <ul>
-          <li><a href="/chamber/">Home</a></li>
-          <li><a href="/chamber/directory.html">Directory</a></li>
-          <li><a href="/chamber/join.html">Join</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
         </ul>
       </nav>
-      <p>© <span id="year"></span> Gallatin Chamber</p>
+      <p><span id="currentYear"></span> 🌻 Hunter Mitchell 🌻 | Tennessee, USA</p>
+      <p id="lastModified"></p>
     </div>
   </footer>
 
   <script src="scripts/header-footer.js" defer></script>
-  <script src="scripts/main.js" defer></script>
+  <script src="scripts/join.js" defer></script>
 </body>
 </html>
