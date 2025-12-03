@@ -182,6 +182,11 @@ main {
 .membership-benefits p {
   margin: 0.5rem 0 1rem;
 }
+.membership-benefits .benefit.highlight {
+  border: 2px solid var(--color-primary);
+  background: #eef4ff;
+}
+
 
 /* Footer */
 .site-footer {

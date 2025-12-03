@@ -10,38 +10,30 @@ document.addEventListener("DOMContentLoaded", () => {
     timestampField.value = new Date().toISOString();
   });
 
-  // Optional: membership benefit modal logic
+  // Membership benefit highlight logic
   const membershipSelect = document.getElementById("membership");
   membershipSelect.addEventListener("change", (e) => {
     const level = e.target.value;
     if (level) {
-      showMembershipBenefits(level);
+      highlightMembershipBenefits(level);
     }
   });
 
-  function showMembershipBenefits(level) {
-    const benefits = {
-      bronze: [
-        "Basic directory listing",
-        "Access to monthly newsletter"
-      ],
-      silver: [
-        "Directory listing with logo",
-        "Event discounts",
-        "Social media shoutouts"
-      ],
-      gold: [
-        "Premium directory placement",
-        "Spotlight feature on homepage",
-        "Priority event sponsorship"
-      ],
-      platinum: [
-        "All Gold benefits",
-        "Exclusive networking events",
-        "Custom marketing package"
-      ]
-    };
+  function highlightMembershipBenefits(level) {
+    // Remove highlight from all benefit sections
+    document.querySelectorAll(".membership-benefits .benefit").forEach(section => {
+      section.classList.remove("highlight");
+    });
 
-    alert(`Membership Benefits for ${level.toUpperCase()}:\n- ${benefits[level].join("\n- ")}`);
+    // Add highlight to the selected level
+    const target = document.querySelector(`.membership-benefits .benefit[data-level="${level}"]`);
+    if (target) {
+      target.classList.add("highlight");
+    }
   }
+
+  // Footer logic
+  let d = new Date();
+  document.getElementById('currentYear').innerHTML = `©${d.getFullYear()}`;
+  document.querySelector('#lastModified').textContent = `Last Modification: ${document.lastModified}`;
 });

@@ -7,11 +7,11 @@
 
   <!-- Meta -->
   <meta name="author" content="Hunter Mitchell">
-  <meta name="description" content="Join the Gallatin Chamber of Commerce and discover membership benefits for your business.">
-  <meta property="og:title" content="Join — Gallatin Chamber">
-  <meta property="og:description" content="Become a member of the Gallatin Chamber of Commerce.">
+  <meta name="description" content="Join the Gallatin Chamber of Commerce to access events, advertising discounts, and networking opportunities.">
+  <meta property="og:title" content="Join the Gallatin Chamber of Commerce">
+  <meta property="og:description" content="Become a member of the Gallatin Chamber to grow your business with exclusive benefits.">
   <meta property="og:image" content="https://felix-homes-assets.s3.us-east-2.amazonaws.com/small_Gallatin_0713158582.jpeg">
-  <meta property="og:url" content="https://yourdomain.com/chamber/join.html">
+  <meta property="og:url" content="https://yourdomain.com/join.html">
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicon -->
@@ -27,9 +27,10 @@
   <link rel="stylesheet" href="styles/large.css" media="(min-width:900px)">
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header" role="banner">
     <div class="header-inner">
-      <a class="brand" href="">
+      <a class="brand" href="index.html">
         <img src="https://www.gallatintn.gov/ImageRepository/Document?documentID=874"
              alt="Gallatin logo" class="brand-mark" />
         <span class="brand-name">Gallatin Chamber</span>
@@ -44,51 +45,57 @@
       </nav>
     </div>
   </header>
-    <main class="main">
-      <section class="join-layout">
-        <form id="join-form" class="join-form" action="thank_you.html" method="get" novalidate>
-          <input type="hidden" name="timestamp" id="timestamp" value="">
 
-          <h1 id="join-heading">Join the Chamber</h1>
+  <!-- Main -->
+  <main class="main">
+    <section class="join-layout">
+      <form id="join-form" class="join-form" action="thank_you.html" method="get" novalidate>
+        <input type="hidden" name="timestamp" id="timestamp" value="">
 
-          <label for="first-name">First Name</label>
-          <input id="first-name" name="first-name" type="text" required title="Enter your first name" autocomplete="given-name" />
+        <h1 id="join-heading">Join the Chamber</h1>
 
-          <label for="last-name">Last Name</label>
-          <input id="last-name" name="last-name" type="text" required title="Enter your last name" autocomplete="family-name" />
+        <label for="first-name">First Name</label>
+        <input id="first-name" name="first-name" type="text" required title="Enter your first name" autocomplete="given-name" />
 
-          <label for="title">Organizational Title</label>
-          <input id="title" name="title" type="text" title="Your role in the organization" autocomplete="organization-title"
-                pattern="[A-Za-z\\s\\-]{7,}" />
+        <label for="last-name">Last Name</label>
+        <input id="last-name" name="last-name" type="text" required title="Enter your last name" autocomplete="family-name" />
 
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required title="Enter a valid email address"
-                autocomplete="email" placeholder="name@example.com" />
+        <label for="title">Organizational Title</label>
+        <input id="title" name="title" type="text" title="Your role in the organization" autocomplete="organization-title"
+               pattern="[A-Za-z\\s\\-]{7,}" />
 
-          <label for="phone">Mobile Phone</label>
-          <input id="phone" name="phone" type="tel" required title="Enter your mobile number" autocomplete="tel" />
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required title="Enter a valid email address"
+               autocomplete="email" placeholder="name@example.com" />
 
-          <label for="company">Business / Organization</label>
-          <input id="company" name="company" type="text" required title="Enter your organization name" autocomplete="organization" />
+        <label for="phone">Mobile Phone</label>
+        <input id="phone" name="phone" type="tel" required title="Enter your mobile number" autocomplete="tel" />
 
-          <label for="membership">Membership Level</label>
-          <select id="membership" name="membership" required>
-            <option value="">Select level</option>
-            <option value="np">NP Membership</option>
-            <option value="bronze">Bronze</option>
-            <option value="silver">Silver</option>
-            <option value="gold">Gold</option>
-          </select>
+        <label for="company">Business / Organization</label>
+        <input id="company" name="company" type="text" required title="Enter your organization name" autocomplete="organization" />
 
-          <button id="join-submit" class="btn primary" type="submit">Submit</button>
-        </form>
+        <label for="description">Organization Description</label>
+        <textarea id="description" name="description" rows="4" title="Describe your organization" required></textarea>
+
+        <label for="membership">Membership Level</label>
+        <select id="membership" name="membership" required>
+          <option value="">Select level</option>
+          <option value="np">NP Membership</option>
+          <option value="bronze">Bronze</option>
+          <option value="silver">Silver</option>
+          <option value="gold">Gold</option>
+        </select>
+
+        <button id="join-submit" class="btn primary" type="submit">Submit</button>
+      </form>
+
         <aside class="membership-benefits">
           <h2>Membership Level Benefits</h2>
-          <div class="benefit">
+          <div class="benefit" data-level="np">
             <h3>NP Membership</h3>
             <p>For non-profit organizations. No fee.</p>
           </div>
-          <div class="benefit">
+          <div class="benefit" data-level="bronze">
             <h3>Bronze Membership</h3>
             <ul>
               <li>15% discount on events</li>
@@ -96,7 +103,7 @@
               <li>Fee of $50/month</li>
             </ul>
           </div>
-          <div class="benefit">
+          <div class="benefit" data-level="silver">
             <h3>Silver Membership</h3>
             <ul>
               <li>25% discount on events</li>
@@ -105,7 +112,7 @@
               <li>Fee of $100/month</li>
             </ul>
           </div>
-          <div class="benefit">
+          <div class="benefit" data-level="gold">
             <h3>Gold Membership</h3>
             <ul>
               <li>50% discount on events</li>
@@ -117,10 +124,11 @@
             </ul>
           </div>
         </aside>
-      </section>
-    </main>
 
+    </section>
+  </main>
 
+  <!-- Footer -->
   <footer class="site-footer" role="contentinfo">
     <div class="footer-inner">
       <nav class="footer-nav" aria-label="Footer">
@@ -135,7 +143,7 @@
     </div>
   </footer>
 
-  <script src="scripts/header-footer.js" defer></script>
-  <script src="scripts/join.js" defer></script>
+  <!-- Comprehensive JS for this page -->
+
 </body>
 </html>
