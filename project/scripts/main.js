@@ -135,22 +135,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const membersEl = document.getElementById('members');
     if (!membersEl || !window.allMembers) return;
 
-    membersEl.className = view === 'list' ? 'list-view cards' : 'grid-view cards';
-    membersEl.innerHTML = window.allMembers.map(m => {
-      if (view === 'list') {
-        return `
-          <article class="card">
-            <img class="logo" src="${m.image}" alt="${m.name} logo" loading="lazy">
-            <div class="card-content">
-              <h3>${m.name}</h3>
-              <p class="meta">${membershipLevel(m.membership)}</p>
-              <p>${m.address}</p>
-              <a href="tel:${m.phone}">${m.phone}</a><br>
-              <a href="${m.website}" target="_blank" rel="noopener">Website →</a>
-            </div>
-          </article>
-        `;
-      } else {
+    if (view === 'list') {
+      membersEl.className = 'list-view';
+      const tableHTML = `
+        <table role="table" aria-label="Member directory table">
+          <thead>
+            <tr>
+              <th>Logo</th>
+              <th>Business Name</th>
+              <th>Membership</th>
+              <th>Address</th>
+              <th>Phone</th>
+              <th>Website</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${window.allMembers.map(m => `
+              <tr>
+                <td><img src="${m.image}" alt="${m.name} logo" loading="lazy"></td>
+                <td>${m.name}</td>
+                <td>${membershipLevel(m.membership)}</td>
+                <td>${m.address}</td>
+                <td><a href="tel:${m.phone}">${m.phone}</a></td>
+                <td><a href="${m.website}" target="_blank" rel="noopener">Visit →</a></td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      `;
+      membersEl.innerHTML = tableHTML;
+    } else {
+      membersEl.className = 'grid-view cards';
+      membersEl.innerHTML = window.allMembers.map(m => {
         return `
           <article class="card">
             <img class="logo" src="${m.image}" alt="${m.name} logo" loading="lazy">
@@ -162,8 +178,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <a href="${m.website}" target="_blank" rel="noopener">Website →</a>
           </article>
         `;
-      }
-    }).join('');
+      }).join('');
+    }
   }
 
   // ===== Directory View Toggle =====
