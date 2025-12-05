@@ -35,12 +35,18 @@
              alt="Gallatin logo" class="brand-mark" />
         <span class="brand-name">Gallatin Chamber</span>
       </a>
-      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
-      <nav class="primary-nav" role="navigation" aria-label="Main">
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-list">
+        <span class="visually-hidden">Toggle navigation</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" />
+        </svg>
+      </button>
+      <nav class="primary-nav" id="primary-nav" role="navigation" aria-label="Main">
         <ul id="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="directory.html">Directory</a></li>
           <li><a href="join.html" aria-current="page">Join</a></li>
+          <li><a href="discover.html">Discover</a></li>
         </ul>
       </nav>
     </div>
@@ -144,7 +150,6 @@
     </div>
   </footer>
 
-  <!-- Comprehensive JS for this page -->
-
+  <script src="scripts/join.js"></script>
 </body>
 </html>

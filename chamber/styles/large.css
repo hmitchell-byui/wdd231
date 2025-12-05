@@ -45,3 +45,12 @@
     font-size: 1.2rem;
   }
 }
+/* Discover Cards */
+@media (min-width: 640px) {
+  .discover-card img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.05);
+  }
+}
+

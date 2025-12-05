@@ -1,4 +1,34 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // ===== Footer dates =====
+  const yearEl = document.getElementById('year');
+  const modEl = document.getElementById('lastModified');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+  if (modEl) {
+    const raw = document.lastModified;
+    const dt = new Date(raw);
+    const formatted = !isNaN(dt.getTime())
+      ? dt.toLocaleString(undefined, {
+          year: 'numeric',
+          month: 'short',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit',
+        })
+      : new Date().toLocaleString();
+    modEl.textContent = formatted;
+  }
+
+  // ===== Nav toggle =====
+  const navToggle = document.querySelector('.nav-toggle');
+  const primaryNav = document.getElementById('primary-nav');
+  if (navToggle && primaryNav) {
+    navToggle.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      primaryNav.style.display = expanded ? 'none' : 'block';
+    });
+  }
+
   const form = document.getElementById("join-form");
   const timestampField = document.getElementById("timestamp");
 
@@ -32,8 +62,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Footer logic
+  // Legacy footer logic (if using old footer)
   let d = new Date();
-  document.getElementById('currentYear').innerHTML = `©${d.getFullYear()}`;
-  document.querySelector('#lastModified').textContent = `Last Modification: ${document.lastModified}`;
+  const oldYear = document.getElementById('currentYear');
+  if (oldYear) oldYear.innerHTML = `©${d.getFullYear()}`;
+  const oldMod = document.querySelector('#lastModified');
+  if (oldMod && !modEl) oldMod.textContent = `Last Modification: ${document.lastModified}`;
 });

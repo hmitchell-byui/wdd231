@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gallatin Chamber Discover</title>
+  <meta name="description" content="Discover local attractions, businesses, and landmarks with the Gallatin Chamber of Commerce." />
+  <meta name="author" content="Hunter Mitchell" />
+  <meta name="theme-color" content="#0044cc" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://www.gallatintn.gov/ImageRepository/Document?documentID=874" type="image/png" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Gallatin Chamber Discover | Explore Local Attractions" />
+  <meta property="og:description" content="Discover businesses, landmarks, and attractions in Gallatin with the Chamber of Commerce." />
+  <meta property="og:image" content="images/discover-preview.webp" />
+  <meta property="og:url" content="https://hmitchell-byui.github.io/wdd231/chamber/discover.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Rubik:wght@500;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/large.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="https://www.gallatintn.gov/ImageRepository/Document?documentID=874" alt="" class="brand-mark" aria-hidden="true" />
+        <span class="brand-name">Gallatin Chamber</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="visually-hidden">Toggle navigation</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" />
+        </svg>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="discover.html" aria-current="page">Discover</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Visitor message -->
+    <section id="visitor-message" class="card">
+      <p>Loading your visit info...</p>
+    </section>
+
+    <!-- Discover cards grid -->
+    <section id="discover-grid">
+      <!-- Cards will be injected here by discovery.js -->
+    </section>
+  </main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-contact">
+        <h2 class="footer-title">Gallatin Chamber of Commerce</h2>
+        <address>
+          118 W Main St, Gallatin, TN 37066<br />
+          <a href="tel:+16154524000">(615) 452-4000</a><br />
+          <a href="mailto:info@gallatintn.org">info@gallatintn.org</a><br />
+          <a href="https://www.gallatintn.org" target="_blank" rel="noopener">www.gallatintn.org</a>
+        </address>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com" target="_blank" rel="noopener">
+          <img src="images/facebook.svg" alt="Facebook" />
+        </a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener">
+          <img src="images/instagram.svg" alt="Instagram" />
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener">
+          <img src="images/linkedin.svg" alt="LinkedIn" />
+        </a>
+      </div>
+      <div class="footer-meta">
+        <p>WDD 231 • Hunter Mitchell</p>
+        <p>&copy; <span id="year"></span> Gallatin Chamber</p>
+        <p>Last modified: <span id="lastModified"></span></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="scripts/discovery.js" type="module"></script>
+</body>
+</html>
