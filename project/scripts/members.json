@@ -1,0 +1,154 @@
+{
+  "members": [
+    {
+      "id": 1,
+      "name": "Golden Hen Farm Supply",
+      "address": "234 Main St, Mitchellville, TN 37160",
+      "phone": "(615) 555-0101",
+      "website": "https://goldenhen.example.com",
+      "image": "./images/chicken-silhoutte.webp",
+      "membership": 3,
+      "description": "Quality farm feed and supplies for poultry and livestock."
+    },
+    {
+      "id": 2,
+      "name": "Red Barn Dairy Cooperative",
+      "address": "567 Pasture Ln, Mitchellville, TN 37160",
+      "phone": "(615) 555-0102",
+      "website": "https://redbarndairy.example.com",
+      "image": "./images/cows-barn.webp",
+      "membership": 3,
+      "description": "Family-owned dairy farm producing fresh milk, cheese, and butter."
+    },
+    {
+      "id": 3,
+      "name": "Sunflower Seed Company",
+      "address": "789 Field Ave, Mitchellville, TN 37160",
+      "phone": "(615) 555-0103",
+      "website": "https://sunflowerseeds.example.com",
+      "image": "./images/field.webp",
+      "membership": 2,
+      "description": "Organic seeds and gardening supplies for sustainable farming."
+    },
+    {
+      "id": 4,
+      "name": "Countryside Equipment Rentals",
+      "address": "456 Barn Rd, Mitchellville, TN 37160",
+      "phone": "(615) 555-0104",
+      "website": "https://countryside-equip.example.com",
+      "image": "./images/tractor-fun.webp",
+      "membership": 2,
+      "description": "Agricultural equipment rental and maintenance services."
+    },
+    {
+      "id": 5,
+      "name": "Fresh Market Produce Stand",
+      "address": "123 Country Ct, Mitchellville, TN 37160",
+      "phone": "(615) 555-0105",
+      "website": "https://freshmarket.example.com",
+      "image": "./images/daily-harvest.webp",
+      "membership": 1,
+      "description": "Local produce market featuring farm-fresh vegetables and fruits."
+    },
+    {
+      "id": 6,
+      "name": "Barnyard Veterinary Clinic",
+      "address": "321 Oak Tree Dr, Mitchellville, TN 37160",
+      "phone": "(615) 555-0106",
+      "website": "https://barnyard-vet.example.com",
+      "image": "./images/newborn-calf.webp",
+      "membership": 2,
+      "description": "Specialized veterinary care for farm animals and livestock."
+    },
+    {
+      "id": 7,
+      "name": "Heritage Livestock Genetics",
+      "address": "654 Meadow Way, Mitchellville, TN 37160",
+      "phone": "(615) 555-0107",
+      "website": "https://heritage-livestock.example.com",
+      "image": "./images/cows-grazing.webp",
+      "membership": 3,
+      "description": "Breeding and genetic services for sustainable livestock farming."
+    },
+    {
+      "id": 8,
+      "name": "Harvest Education Center",
+      "address": "987 Learning Ln, Mitchellville, TN 37160",
+      "phone": "(615) 555-0108",
+      "website": "https://harvest-education.example.com",
+      "image": "./images/tilled-garden.webp",
+      "membership": 1,
+      "description": "Educational programs and workshops on sustainable farming practices."
+    },
+    {
+      "id": 9,
+      "name": "Honey & Co Apiaries",
+      "address": "12 Beehive Rd, Mitchellville, TN 37160",
+      "phone": "(615) 555-0109",
+      "website": "https://honeyco.example.com",
+      "image": "./images/honey-jars.webp",
+      "membership": 2,
+      "description": "Local honey producers and beekeeping supplies."
+    },
+    {
+      "id": 10,
+      "name": "Picket Fence Horses",
+      "address": "88 Stable Ln, Mitchellville, TN 37160",
+      "phone": "(615) 555-0110",
+      "website": "https://picketfence.example.com",
+      "image": "./images/horse.webp",
+      "membership": 1,
+      "description": "Horse boarding, riding lessons, and trail rides." 
+    },
+    {
+      "id": 11,
+      "name": "Sunrise Pig Farm",
+      "address": "404 Muddy Rd, Mitchellville, TN 37160",
+      "phone": "(615) 555-0111",
+      "website": "https://sunrisepig.example.com",
+      "image": "./images/pigs.webp",
+      "membership": 1,
+      "description": "Small-scale pork producers focusing on pasture-raised pigs."
+    },
+    {
+      "id": 12,
+      "name": "Green Beans Collective",
+      "address": "210 Row Ave, Mitchellville, TN 37160",
+      "phone": "(615) 555-0112",
+      "website": "https://greenbeans.example.com",
+      "image": "./images/green-beans.webp",
+      "membership": 2,
+      "description": "Cooperative for fresh vegetable growers and CSA distribution."
+    },
+    {
+      "id": 13,
+      "name": "Tomato Harvest Co-op",
+      "address": "77 Vine St, Mitchellville, TN 37160",
+      "phone": "(615) 555-0113",
+      "website": "https://tomatocoop.example.com",
+      "image": "./images/tomato-harvest.webp",
+      "membership": 2,
+      "description": "Seasonal tomato growers and preserving workshops."
+    },
+    {
+      "id": 14,
+      "name": "Tractor Rides & Events",
+      "address": "300 Field Rd, Mitchellville, TN 37160",
+      "phone": "(615) 555-0114",
+      "website": "https://tractorrides.example.com",
+      "image": "./images/tractor2.webp",
+      "membership": 1,
+      "description": "Family-friendly tractor rides and harvest festivals."
+    },
+    {
+      "id": 15,
+      "name": "Farm Animal Rescue",
+      "address": "55 Haven Ln, Mitchellville, TN 37160",
+      "phone": "(615) 555-0115",
+      "website": "https://farmrescue.example.com",
+      "image": "./images/farm-animals2.webp",
+      "membership": 3,
+      "description": "Rescue and rehabilitation services for farm animals."
+    }
+  ]
+}

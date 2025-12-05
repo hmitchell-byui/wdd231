@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Hunter Mitchell" />
+  <meta name="description" content="Join Mitchellville Farms - Membership and partnership opportunities." />
+
+  <title>Join Us | Mitchellville Farms</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23eadf78'>🌻</text></svg>" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/large.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">🌻</span>
+        <span>Mitchellville Farms</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="primary-nav" aria-label="Main Navigation">
+        <a href="index.html">Home</a>
+        <a href="directory.html">Directory</a>
+        <a href="join.html" aria-current="page">Join</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <h1 style="font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--sun-green); margin-bottom: 1.5rem;">Join Mitchellville Farms</h1>
+
+    <div class="join-layout">
+      <!-- Membership Form -->
+      <div>
+        <form id="joinForm" class="join-form" method="GET" action="thank-you.html">
+          <h2 style="font-family: 'Great Vibes', cursive; color: var(--sun-green); margin-bottom: 1.5rem;">Membership Application</h2>
+
+          <div class="form-group">
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+
+          <div class="form-group">
+            <label for="businessName">Business/Organization Name</label>
+            <input type="text" id="businessName" name="businessName">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+
+          <div class="form-group">
+            <label for="membership">Membership Level *</label>
+            <select id="membership" name="membership" required>
+              <option value="">-- Select a Level --</option>
+              <option value="1">Chicken Supporter 🐔 ($25/month)</option>
+              <option value="2">Cow Supporter 🐄 ($75/month)</option>
+              <option value="3">Pig Supporter 🐖 ($150/month)</option>
+              <option value="4">Horse Patron 🐎 ($300/month)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Tell us about your farm/business:</label>
+            <textarea id="message" name="message"></textarea>
+          </div>
+
+          <input type="hidden" id="timestamp" name="timestamp" value="">
+
+          <button type="submit" class="form-btn">Submit Application</button>
+        </form>
+      </div>
+
+      <!-- Membership Benefits Section -->
+      <aside class="membership-benefits">
+        <h2>Benefits by Tier</h2>
+
+        <div class="benefit" data-level="1">
+          <h3>Chicken Supporter 🐔</h3>
+          <p><strong>$25/month</strong></p>
+          <ul>
+            <li>Directory listing</li>
+            <li>Member newsletter</li>
+            <li>Event access</li>
+          </ul>
+        </div>
+
+        <div class="benefit" data-level="2">
+          <h3>Cow Supporter 🐄</h3>
+          <p><strong>$75/month</strong></p>
+          <ul>
+            <li>Everything in Member</li>
+            <li>Premium directory spot</li>
+            <li>Social media features</li>
+            <li>Monthly newsletter ad</li>
+          </ul>
+        </div>
+
+        <div class="benefit" data-level="3">
+          <h3>Pig Supporter 🐖</h3>
+          <p><strong>$150/month</strong></p>
+          <ul>
+            <li>Everything in Silver</li>
+            <li>Featured spotlight</li>
+            <li>Quarterly farm visits</li>
+            <li>Co-marketing opportunities</li>
+            <li>Priority event scheduling</li>
+          </ul>
+        </div>
+
+        <div class="benefit" data-level="4">
+          <h3>Horse Patron 🐎</h3>
+          <p><strong>$300/month</strong></p>
+          <ul>
+            <li>Everything in Pig</li>
+            <li>Dedicated featured banner</li>
+            <li>Annual farm partner retreat</li>
+            <li>Custom co-marketing campaigns</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-contact">
+          <h3 class="footer-title">Mitchellville Farms</h3>
+          <address>
+            <p>123 Barn Lane, Mitchellville, TN 37160</p>
+            <a href="tel:+16155550123">(615) 555-0123</a><br />
+            <a href="mailto:info@mitchellvillefarms.local">info@mitchellvillefarms.local</a>
+          </address>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <img src="https://via.placeholder.com/24?text=f" alt="" />
+          </a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img src="https://via.placeholder.com/24?text=ig" alt="" />
+          </a>
+          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <img src="https://via.placeholder.com/24?text=tw" alt="" />
+          </a>
+        </div>
+        <div class="footer-meta">
+          <p><span id="currentYear"></span> Hunter Mitchell | Tennessee, USA</p>
+          <p id="lastModified">Last Modification: </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="scripts/header-footer.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

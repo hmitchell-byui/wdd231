@@ -1,0 +1,125 @@
+/* Mitchellville Farms - Large Screen CSS */
+
+/* ===== Header & Navigation ===== */
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none !important;
+  }
+
+  .primary-nav {
+    display: flex !important;
+  }
+
+  .site-header {
+    padding: 1.5rem 1rem;
+  }
+
+  .brand {
+    font-size: 2rem;
+  }
+
+  .brand-mark {
+    width: 48px;
+    height: 48px;
+  }
+
+  .primary-nav a {
+    font-size: 1.05rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* ===== Hero Section ===== */
+@media (min-width: 768px) {
+  .hero {
+    height: 400px;
+    margin: 2.5rem 0;
+  }
+
+  .hero-text {
+    padding: 2rem;
+    max-width: 500px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text p {
+    font-size: 1.05rem;
+  }
+}
+
+/* ===== Home Modules ===== */
+@media (min-width: 768px) {
+  .home-modules {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-modules {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===== Cards ===== */
+@media (min-width: 640px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===== Directory Controls ===== */
+@media (min-width: 640px) {
+  .directory-controls {
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+  }
+}
+
+/* ===== Forms ===== */
+@media (min-width: 768px) {
+  .join-form {
+    max-width: 700px;
+    padding: 2.5rem;
+  }
+
+  .join-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+}
+
+/* ===== Footer ===== */
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+  }
+
+  .footer-contact {
+    text-align: left;
+  }
+
+  .footer-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* ===== Main Container Width ===== */
+@media (min-width: 1200px) {
+  main {
+    padding: 2rem 1rem;
+  }
+}

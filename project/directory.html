@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Hunter Mitchell" />
+  <meta name="description" content="Mitchellville Farms Member Directory - Browse our suppliers, partners, and featured members." />
+
+  <title>Member Directory | Mitchellville Farms</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23eadf78'>🌻</text></svg>" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/large.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">🌻</span>
+        <span>Mitchellville Farms</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="primary-nav" aria-label="Main Navigation">
+        <a href="index.html">Home</a>
+        <a href="directory.html" aria-current="page">Directory</a>
+        <a href="join.html">Join</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <h1 style="font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--sun-green); margin-bottom: 1.5rem;">Member Directory</h1>
+
+    <!-- View Toggle Controls -->
+    <div class="directory-controls">
+      <button id="gridBtn" class="view-btn active">Grid View</button>
+      <button id="listBtn" class="view-btn">List View</button>
+    </div>
+
+    <!-- Members Container -->
+    <section id="members" class="grid-view cards" aria-label="Member Directory">
+      <p>Loading members...</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-contact">
+          <h3 class="footer-title">Mitchellville Farms</h3>
+          <address>
+            <p>123 Barn Lane, Mitchellville, TN 37160</p>
+            <a href="tel:+16155550123">(615) 555-0123</a><br />
+            <a href="mailto:info@mitchellvillefarms.local">info@mitchellvillefarms.local</a>
+          </address>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <img src="https://via.placeholder.com/24?text=f" alt="" />
+          </a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img src="https://via.placeholder.com/24?text=ig" alt="" />
+          </a>
+          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <img src="https://via.placeholder.com/24?text=tw" alt="" />
+          </a>
+        </div>
+        <div class="footer-meta">
+          <p><span id="currentYear"></span> Hunter Mitchell | Tennessee, USA</p>
+          <p id="lastModified">Last Modification: </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="scripts/header-footer.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

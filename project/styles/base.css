@@ -1,0 +1,583 @@
+/* Mitchellville Farms - Base CSS */
+
+/* ===== Reset & Variables ===== */
+:root {
+  --muted-yellow: #f5f2d0;
+  --sun-yellow: #eadf78;
+  --sun-green: #2f6d3a;
+  --sun-brown: #6e4b2e;
+  --ink: #222;
+  --light-bg: #faf8f3;
+  --border-radius: 8px;
+  --shadow: 0 4px 12px rgba(34, 34, 34, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat Alternates', sans-serif;
+  background-color: var(--muted-yellow);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+main {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  width: 100%;
+}
+
+/* ===== Header & Navigation ===== */
+.site-header {
+  background-color: var(--sun-green);
+  color: #fff;
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--sun-yellow);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  color: #fff;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.primary-nav {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.primary-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.primary-nav a:hover,
+.primary-nav a[aria-current="page"] {
+  color: var(--sun-yellow);
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  position: relative;
+  height: 300px;
+  margin: 2rem 0;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-text {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  max-width: 90%;
+}
+
+.hero-text h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--sun-yellow);
+}
+
+.hero-text p {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  background-color: var(--sun-yellow);
+  color: var(--ink);
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(234, 223, 120, 0.3);
+}
+
+/* ===== Section Layouts ===== */
+.home-modules {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.module {
+  background-color: var(--light-bg);
+  border: 2px solid var(--sun-brown);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.module-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem;
+  color: var(--sun-green);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.module ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.module li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(234, 223, 120, 0.5);
+}
+
+.module li:last-child {
+  border-bottom: none;
+}
+
+.module-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--sun-green);
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.module-link:hover {
+  color: var(--sun-brown);
+  text-decoration: underline;
+}
+
+/* ===== Weather Widget ===== */
+.weather-icon {
+  font-size: 1.25rem;
+}
+
+#weather {
+  font-size: 0.95rem;
+}
+
+#weather ul {
+  list-style: none;
+  margin-top: 0.75rem;
+  padding: 0;
+}
+
+#weather li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(234, 223, 120, 0.5);
+}
+
+#weather li:last-child {
+  border-bottom: none;
+}
+
+/* ===== Cards & Grid ===== */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.card {
+  background-color: var(--light-bg);
+  border: 2px solid var(--sun-brown);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(34, 34, 34, 0.15);
+}
+
+.card img.logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.3rem;
+  color: var(--sun-green);
+  margin-bottom: 0.5rem;
+}
+
+.card .meta {
+  font-size: 0.85rem;
+  color: var(--sun-brown);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.card a {
+  color: var(--sun-green);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.card a:hover {
+  color: var(--sun-brown);
+  text-decoration: underline;
+}
+
+.grid-view .card {
+  display: block;
+}
+
+.list-view .card {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1rem;
+}
+
+.list-view .card img.logo {
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.list-view .card-content {
+  flex: 1;
+}
+
+/* ===== Directory Controls ===== */
+.directory-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+
+.view-btn {
+  background-color: var(--sun-yellow);
+  color: var(--ink);
+  border: 2px solid var(--sun-brown);
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.view-btn.active {
+  background-color: var(--sun-brown);
+  color: #fff;
+}
+
+.view-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Form Styles ===== */
+.join-form {
+  background-color: var(--light-bg);
+  border: 2px solid var(--sun-brown);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow: var(--shadow);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: var(--sun-green);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--sun-brown);
+  border-radius: 6px;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 0.95rem;
+  background-color: #fff;
+  color: var(--ink);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--sun-green);
+  box-shadow: 0 0 0 3px rgba(47, 109, 58, 0.1);
+}
+
+.form-group input[type="hidden"] {
+  display: none;
+}
+
+.form-btn {
+  background-color: var(--sun-green);
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.form-btn:hover {
+  background-color: var(--sun-brown);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+/* ===== Benefits Section ===== */
+.membership-benefits {
+  background-color: var(--light-bg);
+  border: 2px solid var(--sun-brown);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.membership-benefits h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem;
+  color: var(--sun-green);
+  margin-bottom: 1rem;
+}
+
+.benefit {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--sun-yellow);
+  background-color: rgba(234, 223, 120, 0.1);
+}
+
+.benefit.highlight {
+  border-left-color: var(--sun-green);
+  background-color: rgba(47, 109, 58, 0.1);
+}
+
+.benefit h3 {
+  color: var(--sun-green);
+  margin-bottom: 0.5rem;
+}
+
+.benefit ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.benefit li {
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.benefit li:before {
+  content: "🌻";
+  position: absolute;
+  left: 0;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background-color: var(--sun-brown);
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-top: auto;
+  border-top: 4px solid var(--sun-yellow);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.footer-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer-contact a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin: 0.25rem 0;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color: var(--sun-yellow);
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+
+.footer-social a img {
+  width: 32px;
+  height: 32px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+
+.footer-social a:hover img {
+  filter: brightness(0) invert(1) drop-shadow(0 0 3px var(--sun-yellow));
+}
+
+/* Emoji/icon style for footer links */
+.footer-social a .icon {
+  display: inline-block;
+  font-size: 1.4rem;
+  line-height: 1;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.04);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.footer-social a:hover .icon {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.footer-meta {
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.footer-meta p {
+  margin: 0.25rem 0;
+}
+
+/* ===== Spotlight Grid ===== */
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* ===== Accessibility ===== */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
