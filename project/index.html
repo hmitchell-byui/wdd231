@@ -53,6 +53,30 @@
     </div>
   </div>
 
+  <!-- Video Content Requirements Modal -->
+  <div id="videoRequirementsModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Video Content Requirements</h2>
+        <button class="modal-close" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="video-requirements">
+          <h3>API/Data Integration</h3>
+          <p><strong>How you used your API/Data integration and demonstrate the output:</strong></p>
+          <p>The Weather Widget demonstrates API integration using the OpenWeatherMap API. The application fetches real-time weather data for Mitchellville, US using an async/await function that makes an HTTP request to the weather service. The API returns comprehensive forecast data including current temperature, weather conditions, and a 5-day forecast. This data is parsed and displayed dynamically on the home page, showing the current weather status and upcoming daily forecasts. The integration retrieves city name, temperature readings, and weather descriptions, transforming the raw JSON response into user-friendly weather information.</p>
+          
+          <h3>Asynchronous Functionality with Try Block</h3>
+          <p><strong>How you used an asynchronous functionality with a try block:</strong></p>
+          <p>The <code>loadWeather()</code> function demonstrates async/await with comprehensive error handling. It initiates the weather request with a try block that manages the entire fetch operation. The code awaits the API response, validates the HTTP status, parses the JSON data, and transforms it for display. If any error occurs—such as network failure, invalid API response, or parsing errors—the catch block intercepts it and displays a user-friendly error message: "Unable to load weather. Please try again later." Additionally, the Member Directory loading function uses the same async/await pattern with try/catch to fetch member data from a JSON file, ensuring robust error handling throughout the application. Both functions use optional chaining (?.) to safely access nested data properties.</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="modal-btn secondary">Close</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Header -->
   <header class="site-header">
     <div class="header-inner">
@@ -146,6 +170,7 @@
         <div class="footer-meta">
           <p><span id="currentYear"></span> Hunter Mitchell | Tennessee, USA</p>
           <p id="lastModified">Last Modification: </p>
+          <p><a href="#" id="videoReqLink" class="footer-link">Video Content Requirements</a></p>
         </div>
       </div>
     </div>

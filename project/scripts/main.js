@@ -334,6 +334,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // ===== Video Requirements Modal =====
+  const videoReqLink = document.getElementById('videoReqLink');
+  const videoReqModal = document.getElementById('videoRequirementsModal');
+  
+  if (videoReqLink && videoReqModal) {
+    const videoModal = new Modal(videoReqModal);
+    
+    videoReqLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      videoModal.open();
+    });
+
+    // Setup close button
+    const closeBtn = videoReqModal.querySelector('.modal-footer .modal-btn.secondary');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => videoModal.close());
+    }
+  }
+
   // ===== Initialize =====
   saveVisit();
   displayVisitorMessage();

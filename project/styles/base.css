@@ -690,6 +690,19 @@ main {
   margin: 0.25rem 0;
 }
 
+.footer-link {
+  color: var(--sun-yellow);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.footer-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
 /* ===== Spotlight Grid ===== */
 .spotlight-grid {
   display: grid;
@@ -855,6 +868,36 @@ main {
 
 .modal-body li {
   padding: 0.3rem 0;
+}
+
+.video-requirements {
+  line-height: 1.8;
+}
+
+.video-requirements h3 {
+  font-size: 1.1rem;
+  color: var(--sun-green);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.video-requirements h3:first-child {
+  margin-top: 0;
+}
+
+.video-requirements p {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  color: var(--ink);
+}
+
+.video-requirements code {
+  background-color: rgba(234, 223, 120, 0.3);
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: monospace;
+  color: var(--sun-brown);
 }
 
 /* ===== Accessibility ===== */
