@@ -1,0 +1,98 @@
+/* Mitchellville Farms - Thank You Page Styles */
+
+.thank-you-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: var(--light-bg);
+  border: 3px solid var(--sun-yellow);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.thank-you-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.thank-you-container h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: var(--sun-green);
+  margin-bottom: 1rem;
+}
+
+.confirmation-details {
+  background-color: rgba(234, 223, 120, 0.3);
+  border-left: 4px solid var(--sun-green);
+  padding: 1rem;
+  margin: 1.5rem 0;
+  text-align: left;
+  border-radius: 6px;
+}
+
+.confirmation-details p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.confirmation-details strong {
+  color: var(--sun-green);
+}
+
+.next-steps {
+  background-color: rgba(47, 109, 58, 0.05);
+  padding: 1.5rem;
+  border-radius: 6px;
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.next-steps h3 {
+  color: var(--sun-green);
+  margin-bottom: 1rem;
+}
+
+.next-steps ol {
+  margin-left: 1.5rem;
+}
+
+.next-steps li {
+  margin-bottom: 0.75rem;
+}
+
+.thank-you-message {
+  margin-top: 1.5rem;
+  font-style: italic;
+  color: var(--sun-brown);
+}
+
+.thank-you-message a {
+  color: var(--sun-green);
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.thank-you-message a:hover {
+  color: var(--sun-brown);
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background-color: var(--sun-green);
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  background-color: var(--sun-brown);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}

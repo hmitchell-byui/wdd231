@@ -697,6 +697,166 @@ main {
   gap: 1rem;
 }
 
+/* ===== Page Headings ===== */
+.page-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: var(--sun-green);
+  margin-bottom: 1.5rem;
+}
+
+.page-title.small {
+  font-size: 2.2rem;
+}
+
+.page-title.form-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== Card Sections ===== */
+.card-section {
+  background: rgba(234, 223, 120, 0.2);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--sun-green);
+}
+
+.card-section p {
+  font-size: 1rem;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.visitor-card {
+  margin-bottom: 1.5rem;
+}
+
+/* ===== Modal Dialog ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1300;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: var(--light-bg);
+  border: 2px solid var(--sun-brown);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--sun-yellow);
+  padding-bottom: 1rem;
+}
+
+.modal-header h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.8rem;
+  color: var(--sun-green);
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--sun-brown);
+  transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+  color: var(--sun-green);
+}
+
+.modal-body {
+  margin-bottom: 1.5rem;
+}
+
+.modal-footer {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.modal-btn {
+  padding: 0.6rem 1.2rem;
+  border: 2px solid var(--sun-brown);
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.modal-btn.primary {
+  background-color: var(--sun-green);
+  color: #fff;
+}
+
+.modal-btn.primary:hover {
+  background-color: var(--sun-brown);
+}
+
+.modal-btn.secondary {
+  background-color: transparent;
+  color: var(--sun-brown);
+}
+
+.modal-btn.secondary:hover {
+  background-color: rgba(234, 223, 120, 0.3);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-body ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.5rem 0;
+}
+
+.modal-body li {
+  padding: 0.3rem 0;
+}
+
 /* ===== Accessibility ===== */
 .visually-hidden {
   position: absolute;

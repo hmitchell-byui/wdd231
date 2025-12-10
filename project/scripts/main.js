@@ -246,7 +246,97 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // ===== Local Storage Management =====
+  function saveVisit() {
+    const visits = JSON.parse(localStorage.getItem('farmVisits') || '[]');
+    const currentVisit = {
+      timestamp: new Date().toISOString(),
+      page: window.location.pathname
+    };
+    visits.push(currentVisit);
+    localStorage.setItem('farmVisits', JSON.stringify(visits));
+  }
+
+  function displayVisitorMessage() {
+    const visitorMsg = document.getElementById('visitor-message');
+    if (!visitorMsg) return;
+
+    const visits = JSON.parse(localStorage.getItem('farmVisits') || '[]');
+    if (visits.length > 1) {
+      const lastVisit = new Date(visits[visits.length - 2].timestamp);
+      const formattedDate = lastVisit.toLocaleDateString(undefined, {
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+      visitorMsg.innerHTML = `<p><strong>Welcome back!</strong> Your last visit was on ${formattedDate}. You have visited ${visits.length} times.</p>`;
+    } else {
+      visitorMsg.innerHTML = '<p><strong>Welcome to Mitchellville Farms!</strong> This is your first visit. We\'re glad you\'re here!</p>';
+    }
+  }
+
+  // ===== Modal Dialog =====
+  class Modal {
+    constructor(modalElement) {
+      this.modal = modalElement;
+      this.closeBtn = this.modal.querySelector('.modal-close');
+      this.setupEventListeners();
+    }
+
+    setupEventListeners() {
+      if (this.closeBtn) {
+        this.closeBtn.addEventListener('click', () => this.close());
+      }
+      this.modal.addEventListener('click', (e) => {
+        if (e.target === this.modal) {
+          this.close();
+        }
+      });
+    }
+
+    open() {
+      this.modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    close() {
+      this.modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    toggle() {
+      if (this.modal.classList.contains('active')) {
+        this.close();
+      } else {
+        this.open();
+      }
+    }
+  }
+
+  // Initialize Modal
+  const welcomeModal = document.getElementById('welcomeModal');
+  if (welcomeModal) {
+    const modal = new Modal(welcomeModal);
+    
+    // Show modal on first visit
+    const hasSeenWelcome = localStorage.getItem('welcomeModalSeen');
+    if (!hasSeenWelcome) {
+      modal.open();
+      localStorage.setItem('welcomeModalSeen', 'true');
+    }
+
+    // Setup modal buttons
+    const closeModalBtn = welcomeModal.querySelector('.modal-footer .modal-btn.secondary');
+    if (closeModalBtn) {
+      closeModalBtn.addEventListener('click', () => modal.close());
+    }
+  }
+
   // ===== Initialize =====
+  saveVisit();
+  displayVisitorMessage();
   loadWeather();
   loadSpotlight();
   loadDirectory();

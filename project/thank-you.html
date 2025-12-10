@@ -8,98 +8,25 @@
 
   <title>Thank You | Mitchellville Farms</title>
 
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Thank You | Mitchellville Farms" />
+  <meta property="og:description" content="Your membership application has been received. Thank you for joining Mitchellville Farms!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hmitchell-byui.github.io/wdd231/project/thank-you.html" />
+  <meta property="og:image" content="https://hmitchell-byui.github.io/wdd231/project/images/cows.webp" />
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23eadf78'>🌻</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle fill='%23eadf78' r='50'/></svg>" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="styles/base.css" />
   <link rel="stylesheet" href="styles/large.css" />
-
-  <style>
-    .thank-you-container {
-      max-width: 600px;
-      margin: 2rem auto;
-      background-color: var(--light-bg);
-      border: 3px solid var(--sun-yellow);
-      border-radius: var(--border-radius);
-      padding: 2rem;
-      text-align: center;
-      box-shadow: var(--shadow);
-    }
-
-    .thank-you-icon {
-      font-size: 4rem;
-      margin-bottom: 1rem;
-    }
-
-    .thank-you-container h2 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.5rem;
-      color: var(--sun-green);
-      margin-bottom: 1rem;
-    }
-
-    .confirmation-details {
-      background-color: rgba(234, 223, 120, 0.3);
-      border-left: 4px solid var(--sun-green);
-      padding: 1rem;
-      margin: 1.5rem 0;
-      text-align: left;
-      border-radius: 6px;
-    }
-
-    .confirmation-details p {
-      margin: 0.5rem 0;
-      font-size: 0.95rem;
-    }
-
-    .confirmation-details strong {
-      color: var(--sun-green);
-    }
-
-    .next-steps {
-      background-color: rgba(47, 109, 58, 0.05);
-      padding: 1.5rem;
-      border-radius: 6px;
-      margin-top: 1.5rem;
-      text-align: left;
-    }
-
-    .next-steps h3 {
-      color: var(--sun-green);
-      margin-bottom: 1rem;
-    }
-
-    .next-steps ol {
-      margin-left: 1.5rem;
-    }
-
-    .next-steps li {
-      margin-bottom: 0.75rem;
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-top: 1.5rem;
-      background-color: var(--sun-green);
-      color: #fff;
-      padding: 0.8rem 1.5rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: all 0.3s ease;
-    }
-
-    .back-link:hover {
-      background-color: var(--sun-brown);
-      transform: translateY(-2px);
-    }
-  </style>
+  <link rel="stylesheet" href="styles/thank-you.css" />
 </head>
 
 <body>
@@ -144,8 +71,8 @@
         </ol>
       </div>
 
-      <p style="margin-top: 1.5rem; font-style: italic; color: var(--sun-brown);">
-        If you have any questions, feel free to contact us at <a href="mailto:info@mitchellvillefarms.local" style="color: var(--sun-green); font-weight: 700;">info@mitchellvillefarms.local</a>
+      <p class="thank-you-message">
+        If you have any questions, feel free to contact us at <a href="mailto:info@mitchellvillefarms.local">info@mitchellvillefarms.local</a>
       </p>
 
       <a href="index.html" class="back-link">Return to Home</a>
